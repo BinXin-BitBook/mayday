@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.songhaozhi.mayday.mapper.generator.LogMapper">
-  <resultMap id="BaseResultMap" type="com.songhaozhi.mayday.model.domain.Log">
+<mapper namespace="com.sunshine.smile.mapper.generator.LogMapper">
+  <resultMap id="BaseResultMap" type="com.sunshine.smile.model.domain.Log">
     <id column="log_id" jdbcType="INTEGER" property="logId" />
     <result column="log_title" jdbcType="VARCHAR" property="logTitle" />
     <result column="log_content" jdbcType="VARCHAR" property="logContent" />
@@ -69,14 +69,14 @@
   <sql id="Base_Column_List">
     log_id, log_title, log_content, log_ip, log_date
   </sql>
-  <select id="selectByExample" parameterType="com.songhaozhi.mayday.model.domain.LogExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sunshine.smile.model.domain.LogExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from mayday_logs
+    from smile_logs
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -87,27 +87,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from mayday_logs
+    from smile_logs
     where log_id = #{logId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from mayday_logs
+    delete from smile_logs
     where log_id = #{logId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.songhaozhi.mayday.model.domain.LogExample">
-    delete from mayday_logs
+  <delete id="deleteByExample" parameterType="com.sunshine.smile.model.domain.LogExample">
+    delete from smile_logs
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.songhaozhi.mayday.model.domain.Log">
-    insert into mayday_logs (log_id, log_title, log_content, 
+  <insert id="insert" parameterType="com.sunshine.smile.model.domain.Log">
+    insert into smile_logs (log_id, log_title, log_content,
       log_ip, log_date)
     values (#{logId,jdbcType=INTEGER}, #{logTitle,jdbcType=VARCHAR}, #{logContent,jdbcType=VARCHAR}, 
       #{logIp,jdbcType=VARCHAR}, #{logDate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.songhaozhi.mayday.model.domain.Log">
-    insert into mayday_logs
+  <insert id="insertSelective" parameterType="com.sunshine.smile.model.domain.Log">
+    insert into smile_logs
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="logId != null">
         log_id,
@@ -143,14 +143,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.songhaozhi.mayday.model.domain.LogExample" resultType="java.lang.Long">
-    select count(*) from mayday_logs
+  <select id="countByExample" parameterType="com.sunshine.smile.model.domain.LogExample" resultType="java.lang.Long">
+    select count(*) from smile_logs
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update mayday_logs
+    update smile_logs
     <set>
       <if test="record.logId != null">
         log_id = #{record.logId,jdbcType=INTEGER},
@@ -173,7 +173,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update mayday_logs
+    update smile_logs
     set log_id = #{record.logId,jdbcType=INTEGER},
       log_title = #{record.logTitle,jdbcType=VARCHAR},
       log_content = #{record.logContent,jdbcType=VARCHAR},
@@ -183,8 +183,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.songhaozhi.mayday.model.domain.Log">
-    update mayday_logs
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.smile.model.domain.Log">
+    update smile_logs
     <set>
       <if test="logTitle != null">
         log_title = #{logTitle,jdbcType=VARCHAR},
@@ -201,8 +201,8 @@
     </set>
     where log_id = #{logId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.songhaozhi.mayday.model.domain.Log">
-    update mayday_logs
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.smile.model.domain.Log">
+    update smile_logs
     set log_title = #{logTitle,jdbcType=VARCHAR},
       log_content = #{logContent,jdbcType=VARCHAR},
       log_ip = #{logIp,jdbcType=VARCHAR},

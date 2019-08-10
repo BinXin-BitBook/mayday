@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.songhaozhi.mayday.mapper.generator.OptionsMapper">
-  <resultMap id="BaseResultMap" type="com.songhaozhi.mayday.model.domain.Options">
+<mapper namespace="com.sunshine.smile.mapper.generator.OptionsMapper">
+  <resultMap id="BaseResultMap" type="com.sunshine.smile.model.domain.Options">
     <id column="option_name" jdbcType="VARCHAR" property="optionName" />
     <result column="option_value" jdbcType="VARCHAR" property="optionValue" />
   </resultMap>
@@ -66,14 +66,14 @@
   <sql id="Base_Column_List">
     option_name, option_value
   </sql>
-  <select id="selectByExample" parameterType="com.songhaozhi.mayday.model.domain.OptionsExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sunshine.smile.model.domain.OptionsExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from mayday_options
+    from smile_options
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,25 +84,25 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from mayday_options
+    from smile_options
     where option_name = #{optionName,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from mayday_options
+    delete from smile_options
     where option_name = #{optionName,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.songhaozhi.mayday.model.domain.OptionsExample">
-    delete from mayday_options
+  <delete id="deleteByExample" parameterType="com.sunshine.smile.model.domain.OptionsExample">
+    delete from smile_options
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.songhaozhi.mayday.model.domain.Options">
-    insert into mayday_options (option_name, option_value)
+  <insert id="insert" parameterType="com.sunshine.smile.model.domain.Options">
+    insert into smile_options (option_name, option_value)
     values (#{optionName,jdbcType=VARCHAR}, #{optionValue,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.songhaozhi.mayday.model.domain.Options">
-    insert into mayday_options
+  <insert id="insertSelective" parameterType="com.sunshine.smile.model.domain.Options">
+    insert into smile_options
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="optionName != null">
         option_name,
@@ -120,14 +120,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.songhaozhi.mayday.model.domain.OptionsExample" resultType="java.lang.Long">
-    select count(*) from mayday_options
+  <select id="countByExample" parameterType="com.sunshine.smile.model.domain.OptionsExample" resultType="java.lang.Long">
+    select count(*) from smile_options
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update mayday_options
+    update smile_options
     <set>
       <if test="record.optionName != null">
         option_name = #{record.optionName,jdbcType=VARCHAR},
@@ -141,15 +141,15 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update mayday_options
+    update smile_options
     set option_name = #{record.optionName,jdbcType=VARCHAR},
       option_value = #{record.optionValue,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.songhaozhi.mayday.model.domain.Options">
-    update mayday_options
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.smile.model.domain.Options">
+    update smile_options
     <set>
       <if test="optionValue != null">
         option_value = #{optionValue,jdbcType=VARCHAR},
@@ -157,8 +157,8 @@
     </set>
     where option_name = #{optionName,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.songhaozhi.mayday.model.domain.Options">
-    update mayday_options
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.smile.model.domain.Options">
+    update smile_options
     set option_value = #{optionValue,jdbcType=VARCHAR}
     where option_name = #{optionName,jdbcType=VARCHAR}
   </update>

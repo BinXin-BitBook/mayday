@@ -10,18 +10,18 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接地址账号密码-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.106.22.160:3306/mayday" userId="mayday" password="mayday123456">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/smiledemo" userId="root" password="root">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.songhaozhi.mayday.model.domain" targetProject="mayday/src/main/java">
+        <javaModelGenerator targetPackage="com.sunshine.smile.model.domain" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
          <!--对应的mapper.xml文件  -->  
-        <sqlMapGenerator targetPackage="mapper.generator" targetProject="mayday/src/main/resources">
+        <sqlMapGenerator targetPackage="mapper.generator" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!--生成Dao类存放位置-->
@@ -30,11 +30,11 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.songhaozhi.mayday.mapper.generator" targetProject="mayday/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sunshine.smile.mapper.generator" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="mayday_user" domainObjectName="User" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
+        <table tableName="smile_demo" domainObjectName="Demo" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
         	<!-- <columnOverride column="article_content" javaType="java.lang.String" jdbcType="VARCHAR" />
         		<columnOverride column="article_content_md" javaType="java.lang.String" jdbcType="VARCHAR" /> -->
         		<!-- Mybatis自动生成Xml文件，针对字段类型为text等会默认产生XXXXWithBlobs的方法问题 -->

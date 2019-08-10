@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.songhaozhi.mayday.mapper.generator.ArticleTagMapper">
-  <resultMap id="BaseResultMap" type="com.songhaozhi.mayday.model.domain.ArticleTag">
+<mapper namespace="com.sunshine.smile.mapper.generator.ArticleTagMapper">
+  <resultMap id="BaseResultMap" type="com.sunshine.smile.model.domain.ArticleTag">
     <result column="article_id" jdbcType="INTEGER" property="articleId" />
     <result column="tag_id" jdbcType="BIGINT" property="tagId" />
   </resultMap>
@@ -66,14 +66,14 @@
   <sql id="Base_Column_List">
     article_id, tag_id
   </sql>
-  <select id="selectByExample" parameterType="com.songhaozhi.mayday.model.domain.ArticleTagExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sunshine.smile.model.domain.ArticleTagExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from mayday_article_tag
+    from smile_article_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,18 +81,18 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.songhaozhi.mayday.model.domain.ArticleTagExample">
-    delete from mayday_article_tag
+  <delete id="deleteByExample" parameterType="com.sunshine.smile.model.domain.ArticleTagExample">
+    delete from smile_article_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.songhaozhi.mayday.model.domain.ArticleTag">
-    insert into mayday_article_tag (article_id, tag_id)
+  <insert id="insert" parameterType="com.sunshine.smile.model.domain.ArticleTag">
+    insert into smile_article_tag (article_id, tag_id)
     values (#{articleId,jdbcType=INTEGER}, #{tagId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.songhaozhi.mayday.model.domain.ArticleTag">
-    insert into mayday_article_tag
+  <insert id="insertSelective" parameterType="com.sunshine.smile.model.domain.ArticleTag">
+    insert into smile_article_tag
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="articleId != null">
         article_id,
@@ -110,14 +110,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.songhaozhi.mayday.model.domain.ArticleTagExample" resultType="java.lang.Long">
-    select count(*) from mayday_article_tag
+  <select id="countByExample" parameterType="com.sunshine.smile.model.domain.ArticleTagExample" resultType="java.lang.Long">
+    select count(*) from smile_article_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update mayday_article_tag
+    update smile_article_tag
     <set>
       <if test="record.articleId != null">
         article_id = #{record.articleId,jdbcType=INTEGER},
@@ -131,7 +131,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update mayday_article_tag
+    update smile_article_tag
     set article_id = #{record.articleId,jdbcType=INTEGER},
       tag_id = #{record.tagId,jdbcType=BIGINT}
     <if test="_parameter != null">

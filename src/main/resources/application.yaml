@@ -1,5 +1,5 @@
 server: 
-  port: 8091 
+  port: 8080
 logging:
     level: 
         org.springframework: info
@@ -16,12 +16,12 @@ spring:
     cache: false
   datasource: 
          type: com.alibaba.druid.pool.DruidDataSource
-         url: jdbc:mysql://localhost:3306/maydaytest?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
-         username: maydaytest
-         password: C36J4EajMepPEdTC
+         url: jdbc:mysql://localhost:3306/smiledemo?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+         username: root
+         password: root
          driver-class-name: com.mysql.jdbc.Driver
 mybatis: 
-  typeAliasesPackage: com.songhaozhi.mayday.model.domain
+  typeAliasesPackage: com.sunshine.smile.model.domain
   mapperLocations: classpath:mapper/*/*.xml
   configuration:
     map-underscore-to-camel-case: true

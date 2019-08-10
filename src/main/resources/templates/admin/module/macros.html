@@ -7,7 +7,7 @@
 	<script type="text/javascript" th:src="@{/plugins/vali/js/bootstrap.min.js}"></script>
 	<script type="text/javascript" th:src="@{/plugins/vali/js/main.js}"></script>
 	<script type="text/javascript" th:src="@{/plugins/vali/js/plugins/pace.min.js}"></script>
-	<script type="text/javascript" th:src="@{/js/mayday.js}"></script>
+	<script type="text/javascript" th:src="@{/js/smile.js}"></script>
 	<script type="text/javascript" th:src="@{/plugins/toast/jquery.toast.js}"></script>
 </div>
 
@@ -123,8 +123,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" th:href="${#maps.containsKey(options,'ico_logo') == false ? '/static/img/favicon.ico' : options['ico_logo'] }"/>
-	<link rel="stylesheet" type="text/css" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">  
+<!--    <link rel="shortcut icon" th:href="${#maps.containsKey(options,'ico_logo') == false ? '/static/img/favicon.ico' : options['ico_logo'] }"/>-->
+    <link rel="shortcut icon" th:href="${#maps.containsKey(options,'ico_logo') == false ? '/static/img/smile.png' : '/static/img/smile.png' }"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/vali/css/main.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/plugins/toast/jquery.toast.css}">
@@ -133,7 +134,7 @@
 	<link rel="stylesheet" th:href="@{/plugins/bootstrap-fileinput/css/fileinput.min.css}">
 	<link rel="stylesheet" th:href="@{/css/attachment.css}">
 </head>
-<header th:fragment="header" class="app-header"><a class="app-header__logo" href="/admin">Mayday</a>
+<header th:fragment="header" class="app-header"><a class="app-header__logo" href="/admin">Smile</a>
      <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
       <a class="app-nav__item" href="/" th:target="_blank"  aria-label="Show notifications"><i class="fa fa-paper-plane fa-lg"></i></a>
@@ -182,13 +183,13 @@
  <!-- 侧边栏-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img width="60px" class="app-sidebar__user-avatar" th:src="${session.user_session.userPortrait == null ? '/static/img/portrait.jpg' : session.user_session.userPortrait}" alt="User Image">
+      <div class="app-sidebar__user"><img width="60px" class="app-sidebar__user-avatar" th:src="${session.user_session.userPortrait == null ? '/static/img/home.jpg' : session.user_session.userPortrait}" alt="User Image">
         <div>
           <p class="app-sidebar__user-name" th:text="${session.user_session.userDisplayName}" ></p>
         </div>
       </div>
       <ul class="app-menu">
-        <li><a class="app-menu__item" href="/admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">仪表盘</span></a></li>
+        <li><a class="app-menu__item" href="/admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Home</span></a></li>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">文章</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="/admin/article"><i class="icon fa fa-circle-o"></i>所有文章</a></li>

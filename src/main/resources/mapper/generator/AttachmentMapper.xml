@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.songhaozhi.mayday.mapper.generator.AttachmentMapper">
-  <resultMap id="BaseResultMap" type="com.songhaozhi.mayday.model.domain.Attachment">
+<mapper namespace="com.sunshine.smile.mapper.generator.AttachmentMapper">
+  <resultMap id="BaseResultMap" type="com.sunshine.smile.model.domain.Attachment">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="picture_name" jdbcType="VARCHAR" property="pictureName" />
     <result column="picture_path" jdbcType="VARCHAR" property="picturePath" />
@@ -74,14 +74,14 @@
     id, picture_name, picture_path, picture_small_path, picture_type, picture_create_date, 
     picture_size, picture_suffix, picture_wh
   </sql>
-  <select id="selectByExample" parameterType="com.songhaozhi.mayday.model.domain.AttachmentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.sunshine.smile.model.domain.AttachmentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from mayday_attachment
+    from smile_attachment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -92,21 +92,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from mayday_attachment
+    from smile_attachment
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from mayday_attachment
+    delete from smile_attachment
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.songhaozhi.mayday.model.domain.AttachmentExample">
-    delete from mayday_attachment
+  <delete id="deleteByExample" parameterType="com.sunshine.smile.model.domain.AttachmentExample">
+    delete from smile_attachment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.songhaozhi.mayday.model.domain.Attachment">
-    insert into mayday_attachment (id, picture_name, picture_path, 
+  <insert id="insert" parameterType="com.sunshine.smile.model.domain.Attachment">
+    insert into smile_attachment (id, picture_name, picture_path,
       picture_small_path, picture_type, picture_create_date, 
       picture_size, picture_suffix, picture_wh
       )
@@ -115,8 +115,8 @@
       #{pictureSize,jdbcType=VARCHAR}, #{pictureSuffix,jdbcType=VARCHAR}, #{pictureWh,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.songhaozhi.mayday.model.domain.Attachment">
-    insert into mayday_attachment
+  <insert id="insertSelective" parameterType="com.sunshine.smile.model.domain.Attachment">
+    insert into smile_attachment
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -176,14 +176,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.songhaozhi.mayday.model.domain.AttachmentExample" resultType="java.lang.Long">
-    select count(*) from mayday_attachment
+  <select id="countByExample" parameterType="com.sunshine.smile.model.domain.AttachmentExample" resultType="java.lang.Long">
+    select count(*) from smile_attachment
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update mayday_attachment
+    update smile_attachment
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -218,7 +218,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update mayday_attachment
+    update smile_attachment
     set id = #{record.id,jdbcType=INTEGER},
       picture_name = #{record.pictureName,jdbcType=VARCHAR},
       picture_path = #{record.picturePath,jdbcType=VARCHAR},
@@ -232,8 +232,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.songhaozhi.mayday.model.domain.Attachment">
-    update mayday_attachment
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunshine.smile.model.domain.Attachment">
+    update smile_attachment
     <set>
       <if test="pictureName != null">
         picture_name = #{pictureName,jdbcType=VARCHAR},
@@ -262,8 +262,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.songhaozhi.mayday.model.domain.Attachment">
-    update mayday_attachment
+  <update id="updateByPrimaryKey" parameterType="com.sunshine.smile.model.domain.Attachment">
+    update smile_attachment
     set picture_name = #{pictureName,jdbcType=VARCHAR},
       picture_path = #{picturePath,jdbcType=VARCHAR},
       picture_small_path = #{pictureSmallPath,jdbcType=VARCHAR},
